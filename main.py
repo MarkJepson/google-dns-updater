@@ -7,6 +7,10 @@ import time
 import sys, urllib
 import flask
 from flask import request, jsonify
+import log
+
+logger = log.setup_custom_logger('root')
+logger.debug('main message')
 
 # app = flask.Flask(__name__)
 # app.config["DEBUG"] = True
@@ -48,8 +52,10 @@ def main(request):
     return page_unauthorized(401)
 
   # Get a list of the current records
-  logger.log "Getting Records"
+  logger.debug('Getting Records')
   records = get_records()
+  logger.debug('Got Records')
+  
   
   # Check for matching records
   for record in records:
