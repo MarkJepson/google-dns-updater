@@ -48,6 +48,7 @@ def main(request):
     return page_unauthorized(401)
 
   # Get a list of the current records
+  logger.log "Getting Records"
   records = get_records()
   
   # Check for matching records
