@@ -54,6 +54,7 @@ def main(request):
   # Get a list of the current records
   logger.debug('Getting Records')
   records = get_records()
+  print(records)
   logger.debug('Got Records')
   
   
